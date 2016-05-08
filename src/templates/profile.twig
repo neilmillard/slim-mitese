@@ -1,0 +1,23 @@
+{% extends 'layout.twig' %}
+
+{% block page_title %}{{ parent() }} | Profile{% endblock %}
+
+{% block content %}
+
+<div>
+    <h2>Identity</h2>
+    <p> Name: {{ name }}</p>
+    <p> Fullname: {{ fullname }}</p>
+    <p> Short Dial: {{ shortdial }}</p>
+    <p> Long Dial: {{ longdial }}</p>
+    <p> Colour: <span style="background-color: {{ colour }};">______</span></p>
+    <p> Mobile: {{ mobile }}</p>
+    <p> Home: {{ home }}</p>
+    <a class="btn" style="background: #3498db;color: #ffffff;" href="{{ base_url() }}{{ path_for('edituser',{'username': name}) }}">
+        Update
+    </a>
+</div>
+
+<br/><br/>
+
+{% endblock %}

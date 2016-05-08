@@ -1,0 +1,54 @@
+{% extends 'layout.twig' %}
+
+{% block page_title %}{{ parent() }} | Profile{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ base_url() }}/css/jquery.simplecolorpicker.css">
+{% endblock %}
+
+{% block content %}
+
+    <form class="form-signin well well-sm" role="form" name="login" id="login" method="post">
+        <h2 class="form-signin-heading">Edit User</h2>
+        <input type="text" name="username" class="form-control" placeholder="name" value="{{ name }}" autofocus required>
+        <input type="password" name="password" class="form-control" placeholder="Password" >
+        <input type="text" name="fullname" class="form-control" placeholder="fullname" value="{{ fullname }}" required>
+        <input type="text" name="shortdial" class="form-control" placeholder="shortdial" value="{{ shortdial }}" >
+        <input type="text" name="longdial" class="form-control" placeholder="longdial" value="{{ longdial }}" >
+        <select name="colour">
+            <option value="#7bd148">Green</option>
+            <option value="#5484ed">Bold blue</option>
+            <option value="#a4bdfc">Blue</option>
+            <option value="#46d6db">Turquoise</option>
+            <option value="#7ae7bf">Light green</option>
+            <option value="#51b749">Bold green</option>
+            <option value="#fbd75b">Yellow</option>
+            <option value="#ffb878">Orange</option>
+            <option value="#ff887c">Red</option>
+            <option value="#dc2127">Bold red</option>
+            <option value="#dbadff">Purple</option>
+            <option value="#e1e1e1">Gray</option>
+        </select>
+        <input type="text" name="mobile" class="form-control" placeholder="mobile" value="{{ mobile }}" >
+        <input type="text" name="home" class="form-control" placeholder="home" value="{{ home }}" >
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Update</button>
+    </form>
+
+<br/><br/>
+
+{% endblock %}
+
+{% block javascript %}
+    <!-- simple colorpicker -->
+    <script src="{{ base_url() }}/scripts/jquery.simplecolorpicker.js"></script>
+<script>
+    //$('select[name="color"]').simplecolorpicker();
+    $('select[name="colour"]').simplecolorpicker('selectColor', '{{ colour }}');
+    //$('select[name="color"]').simplecolorpicker('destroy');
+//    $('select[name="color"]').simplecolorpicker({
+//        picker: true
+//    }).on('change', function() {
+//        $(document.body).css('background-color', $('select[name="color"]').val());
+//    });
+</script>
+{% endblock %}
