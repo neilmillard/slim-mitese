@@ -1,3 +1,7 @@
+### twig cache
+/cache/twig/*
+!/cache/twig/.keepme
+/log/app.log
 ### environment variables for dev mode - these should be set by the server config on prod.
 /.env
 ### Composer template
