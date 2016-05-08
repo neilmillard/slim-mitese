@@ -88,6 +88,10 @@ $container['App\Action\HomeAction'] = function ($c) {
     return new App\Action\HomeAction($c['view'], $c['logger'], $c['router']);
 };
 
+$container['App\Action\PageAction'] = function ($c) {
+    return new App\Action\PageAction($c['view'], $c['logger'], $c['router'], $c['flash']);
+};
+
 $container['App\Action\ProfileAction'] = function ($c) {
     return new App\Action\ProfileAction($c['view'], $c['logger'], $c['router'], $c['flash'], $c['authenticator']);
 };
@@ -99,7 +103,6 @@ $container['App\Action\AdminAction'] = function ($c) {
 $container['App\Action\UserAction'] = function ($c) {
     return new App\Action\UserAction($c['view'], $c['logger'], $c['router'], $c['flash'], $c['authenticator']);
 };
-
 
 $container['App\Action\LoginAction'] = function ($c) {
     return new App\Action\LoginAction($c['view'], $c['logger'], $c['router'], $c['authenticator'], $c['flash']);

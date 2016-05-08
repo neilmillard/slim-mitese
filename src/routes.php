@@ -24,3 +24,10 @@ $app->map(['GET', 'POST'], '/login', 'App\Action\LoginAction:login')
 
 $app->get('/logout', 'App\Action\LoginAction:logout')
     ->setName('logout');
+
+$app->get('/privacy', 'App\Action\HomeAction:dispatch')
+    ->setName('privacy-policy');
+
+$app->get('/{controller}/{subpage}', 'App\Action\PageAction:dispatch');
+
+$app->get('/{controller}', 'App\Action\PageAction:dispatch');
